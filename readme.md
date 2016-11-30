@@ -3,6 +3,8 @@
 **Reliably detect when the user prints.** A better solution for [`beforeprint`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeprint)/[`afterprint`](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint).
 
 [![npm version](https://img.shields.io/npm/v/window-on-print.svg)](https://www.npmjs.com/package/window-on-print)
+[![build status](https://img.shields.io/travis/derhuerst/window-on-print.svg)](https://travis-ci.org/derhuerst/window-on-print)
+[![dev dependency status](https://img.shields.io/david/dev/derhuerst/window-on-print.svg)](https://david-dm.org/derhuerst/window-on-print#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/window-on-print.svg)
 
 

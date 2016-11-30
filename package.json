@@ -10,5 +10,15 @@
 	"repository":  "derhuerst/window-on-print",
 	"bugs":        "https://github.com/derhuerst/window-on-print/issues",
 	"license":     "ISC",
-	"engines":     {"node": ">=6"}
+	"engines":     {"node": ">=6"},
+	"devDependencies": {
+		"browserify": "^13.1.1",
+		"es2020": "^1.1.9",
+		"uglify-js": "^2.7.5"
+	},
+	"scripts": {
+		"bundle": "browserify --standalone onPrint -t es2020 index.js > build/window-on-print.js",
+		"minify": "cat build/window-on-print.js | uglifyjs -mc > build/window-on-print.min.js",
+		"build": "npm run bundle && npm run minify"
+	}
 }
