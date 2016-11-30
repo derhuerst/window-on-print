@@ -1,0 +1,14 @@
+{
+	"name":        "window-on-print",
+	"description": "Reliably detect when the user prints.",
+	"version":     "0.1.0",
+	"main":        "index.js",
+	"files":       ["index.js"],
+	"keywords":    ["print", "event", "window", "onbeforeprint"],
+	"author":      "Jannis R <mail@jannisr.de>",
+	"homepage":    "http://derhuerst.github.io/window-on-print/",
+	"repository":  "derhuerst/window-on-print",
+	"bugs":        "https://github.com/derhuerst/window-on-print/issues",
+	"license":     "ISC",
+	"engines":     {"node": ">=6"}
+}
