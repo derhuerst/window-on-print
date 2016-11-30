@@ -19,6 +19,8 @@ npm install window-on-print
 
 ## Usage
 
+**`onPrint.before` and `onPrint.after` will both call the callback only once.**
+
 ```js
 const onPrint = require('window-on-print')
 

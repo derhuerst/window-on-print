@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>window-on-print</title>
+	<meta name="author" content="Jannis R <mail@jannisr.de>"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<body>
+	<p>Open the DevTools and try to print.</p>
+	<script src="build/window-on-print.js"></script>
+	<script>
+		onPrint.before(window, function () {
+			console.info('beforeprint')
+		})
+		onPrint.after(window, function () {
+			console.info('afterprint')
+		})
+	</script>
+</body>
+</html>
