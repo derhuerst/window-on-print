@@ -5,7 +5,7 @@ const onPrint = (type, match) => (window, cb) => {
 
 	const cleanup = () => {
 		if (queryFn) query.removeListener(queryFn)
-		window.removeEventListener(type + 'print', onPrint, false)
+		window.removeEventListener(type + 'print', cleanup, false)
 		if (!called) {
 			called = true
 			cb()
@@ -19,7 +19,7 @@ const onPrint = (type, match) => (window, cb) => {
 		query = window.matchMedia('print')
 		query.addListener(queryFn)
 	}
-	window.addEventListener(type + 'print', onPrint, false)
+	window.addEventListener(type + 'print', cleanup, false)
 }
 
 module.exports = {

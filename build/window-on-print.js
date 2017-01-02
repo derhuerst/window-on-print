@@ -9,7 +9,7 @@ var onPrint = function (type, match) {
 
 		var cleanup = function () {
 			if (queryFn) query.removeListener(queryFn);
-			window.removeEventListener(type + 'print', onPrint, false);
+			window.removeEventListener(type + 'print', cleanup, false);
 			if (!called) {
 				called = true;
 				cb();
@@ -23,7 +23,7 @@ var onPrint = function (type, match) {
 			query = window.matchMedia('print');
 			query.addListener(queryFn);
 		}
-		window.addEventListener(type + 'print', onPrint, false);
+		window.addEventListener(type + 'print', cleanup, false);
 	};
 };
 
