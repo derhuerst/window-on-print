@@ -21,14 +21,19 @@ const browser = webdriver.remote({
 	}
 })
 
-browser.init().url(`http://localhost:8080/example.html`)
+console.log('init', browser.init())
+console.log('url', browser.url(`http://localhost:8080/example.html`))
 
 
 
-console.log('beforeprint', browser.execute(() => document.getElementById('beforeprint').checked))
+console.log('execute', browser.execute(() =>
+	document.getElementById('execute').checked
+))
 
-console.log('printing…')
-browser.execute(() => window.print())
+console.log('printing…', browser.execute(() => window.print()))
 
-console.log('beforeprint', browser.execute(() => document.getElementById('beforeprint').checked))
-.end()
+console.log('execute', browser.execute(() =>
+	document.getElementById('beforeprint').checked
+))
+
+console.log('end', browser.end())
