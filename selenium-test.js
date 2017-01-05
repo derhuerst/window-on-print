@@ -19,7 +19,7 @@ webdriver.remote({
 	}
 })
 .init()
-.url(`https://google.com`)
+.url(`http://localhost:8080/`)
 .getTitle()
 .then((title) => console.log('page title', title))
 .catch((err) => console.error(err))
