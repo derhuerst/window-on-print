@@ -9,19 +9,26 @@ const build = process.env.TRAVIS_BUILD_NUMBER
 
 
 
-webdriver.remote({
+const browser = webdriver.remote({
 	user, key, host: 'localhost', port: 4445,
 	logLevel: 'silent',
 	desiredCapabilities: {
 		'tunnel-identifier': job, build, name: 'selenium-test',
 		browserName: 'chrome',
 		platform: 'Windows 10',
-		recordScreenshots: false
+		recordScreenshots: false,
+		chromeOptions: {args: ['--kiosk', '--kiosk-printing']}
 	}
 })
-.init()
-.url(`http://localhost:8080/`)
-.getTitle()
-.then((title) => console.log('page title', title))
-.catch((err) => console.error(err))
+
+browser.init().url(`http://localhost:8080/example.html`)
+
+
+
+console.log('beforeprint', browser.execute(() => document.getElementById('beforeprint').checked))
+
+console.log('printing…')
+browser.execute(() => window.print())
+
+console.log('beforeprint', browser.execute(() => document.getElementById('beforeprint').checked))
 .end()

@@ -8,14 +8,22 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1"/>
 </head>
 <body>
-	<p>Open the DevTools and try to print.</p>
+	<p>Try to print.</p>
+	<label for="beforeprint">
+		<input id="beforeprint" type="checkbox" />
+		<code>beforeprint</code>
+	</label>
+	<label for="afterprint">
+		<input id="afterprint" type="checkbox" />
+		<code>afterprint</code>
+	</label>
 	<script src="build/window-on-print.js"></script>
 	<script>
 		onPrint.before(window, function () {
-			console.info('beforeprint')
+			document.getElementById('beforeprint').checked = true
 		})
 		onPrint.after(window, function () {
-			console.info('afterprint')
+			document.getElementById('afterprint').checked = true
 		})
 	</script>
 </body>
