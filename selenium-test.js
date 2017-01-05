@@ -20,7 +20,8 @@ webdriver.remote({
 	}
 })
 .init()
-.url(`http://${user}:${key}@localhost:4445/wd/hub`)
+.url(`http://google.com`)
 .getTitle()
 .then((title) => console.log('page title', title))
+.catch((err) => console.error(err))
 .end()
