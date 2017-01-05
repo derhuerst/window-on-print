@@ -14,7 +14,9 @@
 	"devDependencies": {
 		"browserify": "^13.1.1",
 		"es2020": "^1.1.9",
-		"uglify-js": "^2.7.5"
+		"uglify-js": "^2.7.5",
+		"node-travis-encrypt": "pwmckenna/node-travis-encrypt",
+		"webdriverio": "^4.6.1"
 	},
 	"scripts": {
 		"bundle": "browserify --standalone onPrint -t es2020 index.js > build/window-on-print.js",
