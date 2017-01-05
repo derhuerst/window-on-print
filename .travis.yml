@@ -4,7 +4,7 @@ node_js:
   - 'stable'
 before_script:
   - npm run build
-  - http-server . &
+  - http-server -s . &
   - sleep 1
 script:
   - node selenium-test.js
