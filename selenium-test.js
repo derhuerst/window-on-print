@@ -11,7 +11,7 @@ const build = process.env.TRAVIS_BUILD_NUMBER
 
 webdriver.remote({
 	user, key,
-	host: 'ondemand.saucelabs.com',
+	host: `http://${user}:${key}@localhost:4445/wd/hub`,
 	desiredCapabilities: {
 		'tunnel-identifier': job, build, name: 'selenium-test',
 		browserName: 'chrome',
@@ -20,7 +20,7 @@ webdriver.remote({
 	}
 })
 .init()
-.url(`http://google.com`)
+.url(`https://google.com`)
 .getTitle()
 .then((title) => console.log('page title', title))
 .catch((err) => console.error(err))
