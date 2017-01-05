@@ -4,7 +4,7 @@ node_js:
   - 'stable'
 before_script:
   - npm run build
-  - start-stop-daemon --start -b -a $(which http-server) -- (readlink -e .)
+  - start-stop-daemon --start -b -a $(which http-server) -- $(readlink -e .)
   - sleep 1
 script:
   - node selenium-test.js
