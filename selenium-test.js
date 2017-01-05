@@ -27,7 +27,7 @@ so(function* () {
 	yield browser.url(`http://localhost:8080/example.html`)
 
 	console.log('execute1', yield browser.execute(() => [
-		document.getElementById('beforeprint').checked
+		document.getElementById('beforeprint').checked,
 		document.getElementById('afterprint').checked
 	]))
 
@@ -35,7 +35,7 @@ so(function* () {
 	yield browser.execute(() => window.print())
 
 	console.log('execute2', yield browser.execute(() => [
-		document.getElementById('beforeprint').checked
+		document.getElementById('beforeprint').checked,
 		document.getElementById('afterprint').checked
 	]))
 
