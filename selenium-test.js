@@ -10,8 +10,7 @@ const build = process.env.TRAVIS_BUILD_NUMBER
 
 
 webdriver.remote({
-	user, key,
-	host: `http://${user}:${key}@localhost:4445/wd/hub`,
+	user, key, host: 'localhost', port: 4445,
 	desiredCapabilities: {
 		'tunnel-identifier': job, build, name: 'selenium-test',
 		browserName: 'chrome',
