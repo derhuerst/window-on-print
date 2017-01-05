@@ -32,9 +32,8 @@ so(function* () {
 		afterprint: document.getElementById('afterprint').checked
 	}))
 
-	console.log(before)
-	assert.strictEqual(before.values.beforeprint, false)
-	assert.strictEqual(before.values.afterprint, false)
+	assert.strictEqual(before.value.beforeprint, false)
+	assert.strictEqual(before.value.afterprint, false)
 
 	console.log('printing.')
 	yield browser.execute(() => window.print())
@@ -44,9 +43,8 @@ so(function* () {
 		afterprint: document.getElementById('afterprint').checked
 	}))
 
-	console.log(after)
-	assert.strictEqual(after.values.beforeprint, true)
-	assert.strictEqual(after.values.afterprint, true)
+	assert.strictEqual(after.value.beforeprint, true)
+	assert.strictEqual(after.value.afterprint, true)
 
 	yield browser.end()
 })()
