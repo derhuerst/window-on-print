@@ -11,9 +11,11 @@ const job = process.env.TRAVIS_JOB_NUMBER
 const browser = process.env.BROWSER
 const platform = process.env.PLATFORM
 
+console.log(`Using ${browser} on ${platform}.`)
 
 
-const browser = webdriver.remote({
+
+const runner = webdriver.remote({
 	user, key, host: 'localhost', port: 4445,
 	logLevel: 'silent',
 	desiredCapabilities: {
@@ -26,10 +28,10 @@ const browser = webdriver.remote({
 })
 
 so(function* () {
-	yield browser.init()
-	yield browser.url(`http://localhost:8080/example.html`)
+	yield runner.init()
+	yield runner.url(`http://localhost:8080/example.html`)
 
-	const before = yield browser.execute(() => ({
+	const before = yield runner.execute(() => ({
 		beforeprint: document.getElementById('beforeprint').checked,
 		afterprint: document.getElementById('afterprint').checked
 	}))
@@ -37,10 +39,10 @@ so(function* () {
 	assert.strictEqual(before.value.beforeprint, false)
 	assert.strictEqual(before.value.afterprint, false)
 
-	console.log('printing.')
-	yield browser.execute(() => window.print())
+	console.log('Printing.')
+	yield runner.execute(() => window.print())
 
-	const after = yield browser.execute(() => ({
+	const after = yield runner.execute(() => ({
 		beforeprint: document.getElementById('beforeprint').checked,
 		afterprint: document.getElementById('afterprint').checked
 	}))
@@ -48,7 +50,7 @@ so(function* () {
 	assert.strictEqual(after.value.beforeprint, true)
 	assert.strictEqual(after.value.afterprint, true)
 
-	yield browser.end()
+	yield runner.end()
 })()
 .catch((err) => {
 	console.error(err)
