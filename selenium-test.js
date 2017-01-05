@@ -30,10 +30,10 @@ so(function* () {
 	const before = yield browser.execute(() => ({
 		beforeprint: document.getElementById('beforeprint').checked,
 		afterprint: document.getElementById('afterprint').checked
-	})).values
+	}))
 
-	assert.strictEqual(before.beforeprint, false)
-	assert.strictEqual(before.afterprint, false)
+	assert.strictEqual(before.values.beforeprint, false)
+	assert.strictEqual(before.values.afterprint, false)
 
 	console.log('printing.')
 	yield browser.execute(() => window.print())
@@ -41,10 +41,10 @@ so(function* () {
 	const after = yield browser.execute(() => ({
 		beforeprint: document.getElementById('beforeprint').checked,
 		afterprint: document.getElementById('afterprint').checked
-	})).values
+	}))
 
-	assert.strictEqual(after.beforeprint, true)
-	assert.strictEqual(after.afterprint, true)
+	assert.strictEqual(after.values.beforeprint, true)
+	assert.strictEqual(after.values.afterprint, true)
 
 	yield browser.end()
 })()
