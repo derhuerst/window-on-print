@@ -15,7 +15,8 @@
 		"browserify": "^13.1.1",
 		"es2020": "^1.1.9",
 		"uglify-js": "^2.7.5",
-		"webdriverio": "^4.6.1"
+		"webdriverio": "^4.6.1",
+		"http-server": "^0.9.0"
 	},
 	"scripts": {
 		"bundle": "browserify --standalone onPrint -t es2020 index.js > build/window-on-print.js",

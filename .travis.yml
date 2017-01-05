@@ -4,7 +4,9 @@ node_js:
   - 'stable'
 script:
   - npm run build
+  - start-stop-daemon --start -p .pid -b -m -a $(which http-server) -- (readlink -e .)
   - node selenium-test.js
+  - start-stop-daemon --stop -p .pid
 addons:
   sauce_connect:
     username: 'derhuerst'
