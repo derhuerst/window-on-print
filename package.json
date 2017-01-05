@@ -15,7 +15,6 @@
 		"browserify": "^13.1.1",
 		"es2020": "^1.1.9",
 		"uglify-js": "^2.7.5",
-		"node-travis-encrypt": "pwmckenna/node-travis-encrypt",
 		"webdriverio": "^4.6.1"
 	},
 	"scripts": {
