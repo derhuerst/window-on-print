@@ -2,6 +2,7 @@
 
 const webdriver = require('webdriverio')
 const so = require('so')
+const assert = require('assert')
 
 const user = process.env.SAUCE_USERNAME
 const key = process.env.SAUCE_ACCESS_KEY
@@ -26,18 +27,24 @@ so(function* () {
 	yield browser.init()
 	yield browser.url(`http://localhost:8080/example.html`)
 
-	console.log('execute1', yield browser.execute(() => [
-		document.getElementById('beforeprint').checked,
-		document.getElementById('afterprint').checked
-	]))
+	const before = yield browser.execute(() => ({
+		beforeprint: document.getElementById('beforeprint').checked,
+		afterprint: document.getElementById('afterprint').checked
+	})).values
 
-	console.log('printing')
+	assert.strictEqual(before.beforeprint, false)
+	assert.strictEqual(before.afterprint, false)
+
+	console.log('printing.')
 	yield browser.execute(() => window.print())
 
-	console.log('execute2', yield browser.execute(() => [
-		document.getElementById('beforeprint').checked,
-		document.getElementById('afterprint').checked
-	]))
+	const after = yield browser.execute(() => ({
+		beforeprint: document.getElementById('beforeprint').checked,
+		afterprint: document.getElementById('afterprint').checked
+	})).values
+
+	assert.strictEqual(after.beforeprint, true)
+	assert.strictEqual(after.afterprint, true)
 
 	yield browser.end()
 })()
