@@ -21,7 +21,7 @@ webdriver.remote({
 	}
 })
 .init()
-.url('http://saucelabs.com/test/guinea-pig')
+.url(`http://${user}:${key}@localhost:4445/wd/hub`)
 .getTitle()
 .then((title) => console.log('page title', title))
 .end()
