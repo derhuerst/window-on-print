@@ -1,6 +1,7 @@
 'use strict'
 
 const webdriver = require('webdriverio')
+const so = require('so')
 
 const user = process.env.SAUCE_USERNAME
 const key = process.env.SAUCE_ACCESS_KEY
@@ -21,19 +22,19 @@ const browser = webdriver.remote({
 	}
 })
 
-console.log('init', browser.init())
-console.log('url', browser.url(`http://localhost:8080/example.html`))
+so(function* () {
+	yield browser.init()
+	yield browser.url(`http://localhost:8080/example.html`)
 
+	console.log('execute1', yield browser.execute(() =>
+		document.getElementById('execute').checked
+	))
 
+	console.log('printing…', yield browser.execute(() => window.print()))
 
-console.log('execute', browser.execute(() =>
-	document.getElementById('execute').checked
-))
+	console.log('execute', yield browser.execute(() =>
+		document.getElementById('beforeprint').checked
+	))
 
-console.log('printing…', browser.execute(() => window.print()))
-
-console.log('execute', browser.execute(() =>
-	document.getElementById('beforeprint').checked
-))
-
-console.log('end', browser.end())
+	yield browser.end()
+})()
