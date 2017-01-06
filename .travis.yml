@@ -9,9 +9,9 @@ before_script:
 script:
   - node selenium-test.js
 env:
-  - BROWSER=chrome PLATFORM="Windows 10"
-  - BROWSER=firefox PLATFORM="Windows 10"
-  - BROWSER=safari PLATFORM="macOS 10.12"
+  - PLATFORM="Windows 10"
+  - PLATFORM=Linux
+  - PLATFORM="macOS 10.12"
 addons:
   sauce_connect:
     username: 'derhuerst'
