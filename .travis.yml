@@ -2,7 +2,18 @@ sudo: false
 language: node_js
 node_js:
   - 'stable'
-  - '7'
-  - '6'
-script:
+before_script:
   - npm run build
+  - http-server -s . &
+  - sleep 1
+script:
+  - node selenium-test.js
+env:
+  - PLATFORM="Windows 10"
+  - PLATFORM=Linux
+  - PLATFORM="macOS 10.12"
+addons:
+  sauce_connect:
+    username: 'derhuerst'
+    access_key:
+      secure: 'tG558MFNjDLzqm1iq6xChBTPqvimz2vBKh/I6hnO8FvE6PTFlZG6GZkAm3Gif8Z+qrdQ7/S8TRXFMbol2hGT8AbKFmyVNQgJMddlio/fRbgWtsp0LwdF/Nfk4yNzQZiD5KFkJPiT7OoQJOEQ6q0E+LUr6BUgoGy4LJkfqGHFWwUHRz8WxgoF/P4P+NFjej/lx9pUX/K3bTOrX+yoME8vDy3Bal12K0pM+hcZ9Cm1AyaKDEmgZJ0xHo8A5AxHNHKj6KsdLy8jXfgkQVF9xIcLfxAzkA64fMwU5ixU/PKxgPrRdGrxN8oG87ecHQC8ULyK/ilmOpF7CVoVKTB/CjLT5bUNFtA1h8RUZQfmI+94S+qfcQPeDlwv321PNCCyX2ixhySNvUgKGy7rNxtW8TKXvmnbYqqd9CW1AFjlLHRcjRlOXb5Zj4thjsgk1XuCvN23uH6q3+KaJsBvQfnuKI8aOZpDIURi9eaK1aOl8/BsQPJj8rhP9bQFkoZdqbU1MOs1nWKBRZBaNIhPeRFxL0M4t7Th70CYav2j95heYrPe347V1AvA+zsl4PT/BYQ2uyxbUlvuWXxZamieHEkecsfw7YXypAI8WhfSSXWq+4vvRuf7wxK/1ENgFwkiqu/w7usMAvErIzrirMX5lnC+UoZmFOTFouYTiNxtI/zfEtSE6Po='
