@@ -66,7 +66,7 @@ so(function* () {
 
 	console.log('Printing.')
 	yield runner.execute(() => window.print())
-	yield runner.keys('Enter') // Try to randomly confirm the dialog
+	yield runner.keys(['Escape']) // try to proceed somehow
 
 	const after = yield runner.execute(() => ({
 		beforeprint: document.getElementById('beforeprint').checked,
