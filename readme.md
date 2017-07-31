@@ -11,8 +11,6 @@
 
 ## Installing
 
-Use the bundle from `build/window-on-print.min.js` or install using [npm](https://www.npmjs.com).
-
 ```shell
 npm install window-on-print
 ```
