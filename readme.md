@@ -20,18 +20,18 @@ npm install window-on-print
 
 ## Usage
 
-**`onPrint.before` and `onPrint.after` will both call the callback only once.**
-
 ```js
 const onPrint = require('window-on-print')
 
-onPrint.before(window, () => {
+const unsubscribe = onPrint.before(window, () => {
 	console.info('user is going to print')
 })
 onPrint.after(window, () => {
 	console.info('user is has printed or aborted')
 })
 ```
+
+You may call `unsubscribe()` to stop listening for events.
 
 
 ## Contributing
