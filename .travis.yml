@@ -14,6 +14,5 @@ env:
   - PLATFORM="macOS 10.12"
 addons:
   sauce_connect:
-    username: 'derhuerst'
-    access_key:
-      secure: 'Mmtj58d9WALkj4/lcfFtv1II0DrY8qXQ88kwPN08oYKmPVUqH8IEsXXXiFXlLOWLQgVXY9GI3E5ydMN4eVQVFWIeUycU7h2dGh1yvJXuE8BU/7ZLvGrbRQBQ8xGixqWKB30NG/47DUu3x5Mae60Q8+IJEeleYrvYHbCBry8Af9WYVXYLCzCIbLdbzBpVqaMF4nVeFMphuWHbCrbjEhkwqx70E4whyfUdhqM1a2jiGiAm77LHqnxC5PjexO4veimoz9II+jaD/lu/I9EW9xO3Out1gHaFJedbC2RiO+UUnv45wjX+hEqzTFdjQiOVmCcY4dQaACcAT8n2Wf7YSkUjNK34X/Vfg7kPZk1wKbGVyBE0dGl2bnGwauHmnsVfxrVcb8WKD3/05h9QB/TXtM4x9ZXPMaxf6eL4sxfRJH4h+Icz2N/3esxYCfNMMDdQBKaGhfGpu93EGX7GpJ5kTToKzAIM11QW+rxw1g7rVjqfG21MiwpBAUAgE8ame1V7ZEdXylJBv66CeqfmUU/nX9ZBVDHWB9UB2OgyBbD1whigUs+LUZE9UURmaoAQzYqok1gaTga7FZLbPQ0kKLYzL61AOqMFwiL2gJMgw2egtHwg218H2JxoQnZrZGSitXzjJjyWzfl8yOcfontnVq42umypnVBx0tcZiwM/Tcil3CG+zys='
+    username: $SAUCE_USER
+    access_key: $SAUCE_KEY

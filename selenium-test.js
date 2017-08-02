@@ -4,8 +4,8 @@ const webdriver = require('webdriverio')
 const so = require('so')
 const assert = require('assert')
 
-const user = process.env.SAUCE_USERNAME
-const key = process.env.SAUCE_ACCESS_KEY
+const user = process.env.SAUCE_USER
+const key = process.env.SAUCE_KEY
 const build = process.env.TRAVIS_BUILD_NUMBER
 const job = process.env.TRAVIS_JOB_NUMBER
 const platform = process.env.PLATFORM
