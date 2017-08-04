@@ -3,11 +3,11 @@ language: node_js
 node_js:
   - 'stable'
 before_script:
-  - npm run build
   - http-server -s . &
   - sleep 1
 script:
-  - node selenium-test.js
+  - npm run build
+  - npm run test
 env:
   - PLATFORM="Windows 10"
   - PLATFORM=Linux
