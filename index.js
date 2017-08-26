@@ -5,7 +5,7 @@ const onPrint = (type, match) => (window, cb) => {
 
 	const unsubscribe = () => {
 		if (queryFn) query.removeListener(queryFn)
-		window.removeEventListener(type + 'print', cleanup, false)
+		window.removeEventListener(type + 'print', print, false)
 	}
 
 	const print = () => {
