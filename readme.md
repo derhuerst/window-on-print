@@ -7,6 +7,7 @@
 [![dependency status](https://img.shields.io/david/derhuerst/window-on-print.svg)](https://david-dm.org/derhuerst/window-on-print)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/window-on-print.svg)](https://david-dm.org/derhuerst/window-on-print#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/window-on-print.svg)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
 
 ## Installing

@@ -1,20 +1,27 @@
 {
-	"name":        "window-on-print",
+	"name": "window-on-print",
 	"description": "Reliably detect when the user prints.",
-	"version":     "0.2.1",
+	"version": "0.2.2",
 	"main": "./dist/index.js",
 	"module": "./index.js",
 	"files": [
 		"index.js",
 		"dist"
 	],
-	"keywords":    ["print", "event", "window", "onbeforeprint"],
-	"author":      "Jannis R <mail@jannisr.de>",
-	"homepage":    "http://derhuerst.github.io/window-on-print/",
-	"repository":  "derhuerst/window-on-print",
-	"bugs":        "https://github.com/derhuerst/window-on-print/issues",
-	"license":     "ISC",
-	"engines":     {"node": ">=6"},
+	"keywords": [
+		"print",
+		"event",
+		"window",
+		"onbeforeprint"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "http://derhuerst.github.io/window-on-print/",
+	"repository": "derhuerst/window-on-print",
+	"bugs": "https://github.com/derhuerst/window-on-print/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
 	"devDependencies": {
 		"babel-cli": "^6.24.1",
 		"babel-preset-env": "^1.7.0",
