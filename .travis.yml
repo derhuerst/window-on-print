@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - 'stable'
 before_script:
-  - http-server -s . &
+  - serve . &
   - sleep 1
 script:
   - npm run build

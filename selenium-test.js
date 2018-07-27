@@ -29,7 +29,7 @@ const runner = webdriver.remote({
 
 so(function* () {
 	yield runner.init()
-	yield runner.url(`http://localhost:8080/example.html`)
+	yield runner.url(`http://localhost:5000/example.html`)
 
 	const before = yield runner.execute(() => ({
 		beforeprint: document.getElementById('beforeprint').checked,
