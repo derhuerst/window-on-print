@@ -28,7 +28,7 @@
 		"browserify": "^16.2.2",
 		"serve": "^11.3.2",
 		"so": "^1.0.1",
-		"webdriverio": "^4.8.0"
+		"webdriverio": "^5.0.0"
 	},
 	"scripts": {
 		"build": "babel index.js --presets env --out-dir dist",
